@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (localStorage.getItem('authenticated') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
+</head>
+<body>
+    <div class="d-flex">
+        <div id="sidebar" class="bg-light border-right">
+            <div class="sidebar-heading">Dashboard </div>
+            <div class="list-group list-group-flush">
+                <a href="overview.html" class="list-group-item list-group-item-action bg-light">Overview</a>
+                <a href="reports.html" class="list-group-item list-group-item-action bg-light">Reports</a>
+                <a href="analytics.html" class="list-group-item list-group-item-action bg-light">Analytics</a>
+                <a href="export.html" class="list-group-item list-group-item-action bg-light">Export</a>
+                <button class="list-group-item list-group-item-action bg-light text-danger" onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <h1 class="mt-4">Analytics</h1>
+                <p>Analytics content goes here.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function logout() {
+            localStorage.removeItem('authenticated');
+            localStorage.removeItem('username');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
