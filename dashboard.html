@@ -25,7 +25,7 @@
         </div>
         <div id="page-content-wrapper">
             <div class="container-fluid">
-                <p id="welcome">Welcome, <span id="usernameDisplay"></span>!</p>
+                <p id="usernameDisplay"></p>
                 <div class="row mt-5">
                     <div class="col-md-6">
                         <div class="card">
@@ -69,7 +69,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('usernameDisplay').textContent = localStorage.getItem('username');
+            document.getElementById('usernameDisplay').textContent = "Welcome " + localStorage.getItem('username');
 
             const ctx = document.getElementById('myChart').getContext('2d');
             new Chart(ctx, {
